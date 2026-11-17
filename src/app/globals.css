@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+[data-theme="dark"],
+html.dark {
+  /* Pine & Gold Palette (Happy Hues - Forest/Pine & Warm Gold) */
+  --color-canvas: #004643;
+  --color-surface-base: #001e1d;
+  --color-surface-elevated: #052e2c;
+  --color-surface-overlay: #083c39;
+  --color-surface-secondary: #abd1c6;
+  --color-surface-pill: rgba(255, 255, 254, 0.08);
+
+  /* Typography */
+  --color-headline: #fffffe;
+  --color-paragraph: #abd1c6;
+  --color-text-white: #fffffe;
+  --color-text-ink: #fffffe;
+  --color-text-muted: #abd1c6;
+  --color-text-dark: #001e1d;
+
+  /* Glassmorphism */
+  --color-glass-panel-bg: rgba(0, 30, 29, 0.88);
+  --color-glass-pill-bg: rgba(255, 255, 254, 0.06);
+  --color-glass-pill-border: rgba(171, 209, 198, 0.25);
+  --color-glass-glow-card-from: rgba(5, 46, 44, 0.95);
+  --color-glass-glow-card-to: rgba(0, 30, 29, 0.98);
+  --color-glass-glow-card-border-hover: rgba(168, 85, 247, 0.6);
+  --color-glass-glow-card-shadow-hover: rgba(168, 85, 247, 0.25);
+
+  /* Buttons & Highlights */
+  --color-button: #8b5cf6;
+  --color-button-text: #ffffff;
+  --color-btn-white-pill-bg: #e8e4e6;
+  --color-btn-white-pill-color: #001e1d;
+  --color-btn-white-pill-hover: #fffffe;
+  --color-btn-white-pill-shadow: rgba(0, 30, 29, 0.35);
+
+  --color-btn-violet-from: #8b5cf6;
+  --color-btn-violet-to: #7c3aed;
+  --color-btn-violet-hover-from: #a855f7;
+  --color-btn-violet-hover-to: #8b5cf6;
+  --color-btn-violet-shadow: rgba(139, 92, 246, 0.35);
+  --color-btn-violet-shadow-hover: rgba(139, 92, 246, 0.55);
+
+  --color-btn-outline-border: rgba(171, 209, 198, 0.3);
+  --color-btn-outline-border-hover: #a855f7;
+  --color-btn-outline-bg-hover: rgba(168, 85, 247, 0.12);
+
+  /* Scrollbars */
+  --color-scrollbar-track: #004643;
+  --color-scrollbar-thumb: #001e1d;
+  --color-scrollbar-thumb-hover: #8b5cf6;
+
+  /* Accents */
+  --accent-violet-primary: #8b5cf6;
+  --accent-violet-light: #c084fc;
+  --accent-violet-dark: #6d28d9;
+  --accent-violet-glow: rgba(168, 85, 247, 0.35);
+  --accent-tertiary: #e16162;
+
+  /* Borders & Strokes */
+  --stroke-dark: #001e1d;
+  --border-subtle: rgba(171, 209, 198, 0.2);
+  --border-hover: #a855f7;
+
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Base Body Styles */
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+html, body {
+  overflow-x: clip;
+  background-color: var(--color-canvas);
+  color: var(--color-text-ink);
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: #004643;
+  color: #fffffe;
+}
+
+/* Headings in theme #fffffe */
+h1, h2, h3, h4, h5, h6, .text-white {
+  color: #fffffe !important;
+}
+
+/* Paragraphs in theme #abd1c6 */
+p, .text-zinc-400 {
+  color: #abd1c6 !important;
+}
+
+.text-zinc-300 {
+  color: #e8e4e6 !important;
+}
+
+.text-zinc-500 {
+  color: #72a197 !important;
+}
+
+/* Tertiary Accents (#e16162 coral or #abd1c6 seafoam) */
+.text-emerald-400,
+.text-emerald-300 {
+  color: #abd1c6 !important;
+}
+
+.border-emerald-500\/30,
+.border-emerald-500\/40 {
+  border-color: rgba(171, 209, 198, 0.35) !important;
+}
+
+.bg-emerald-950\/30,
+.bg-emerald-950\/40 {
+  background-color: rgba(0, 30, 29, 0.5) !important;
+}
+
+/* Gradient Velvet */
+.text-gradient-velvet {
+  background: linear-gradient(135deg, #FFFFFF 30%, #C084FC 80%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #a855f7;
+}
+
+.text-gradient-subtle {
+  background: linear-gradient(135deg, #fffffe 40%, #abd1c6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-violet-primary);
+  outline-offset: 2px;
+}
+
+:disabled, [aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #ffffff;
+}
+
+input::selection,
+textarea::selection {
+  background-color: rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: var(--color-glass-panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-pill {
+  background: var(--color-glass-pill-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-pill-border);
+}
+
+.glass-glow-card {
+  background: linear-gradient(180deg, var(--color-glass-glow-card-from) 0%, var(--color-glass-glow-card-to) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  transition-property: border-color, box-shadow, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-glow-card:hover {
+  border-color: var(--color-glass-glow-card-border-hover);
+  box-shadow: 0 0 30px var(--color-glass-glow-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ========================================================
+   BUTTON PILL PRESETS (PINE & GOLD PALETTE)
+======================================================== */
+/* 1. Main / Bone Pill (#e8e4e6) */
+.btn-white-pill {
+  background-color: #e8e4e6 !important;
+  color: #001e1d !important;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, transform, box-shadow, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  box-shadow: 0 4px 15px rgba(0, 30, 29, 0.35);
+}
+
+.btn-white-pill:hover {
+  background-color: #fffffe !important;
+  color: #001e1d !important;
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 30, 29, 0.4);
+}
+
+.btn-white-pill:active {
+  transform: scale(0.98);
+}
+
+/* 2. Primary Highlight Button Pill (Violet Gradient per Design.md) */
+.btn-violet-pill {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  color: #ffffff !important;
+  border-radius: 9999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+.btn-violet-pill:hover {
+  background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%) !important;
+  color: #ffffff !important;
+  transform: scale(1.02);
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.55);
+}
+
+.btn-violet-pill:active {
+  transform: scale(0.98);
+}
+
+/* 3. Secondary Outline Pill */
+.btn-outline-pill {
+  background-color: rgba(255, 255, 254, 0.05) !important;
+  color: #fffffe !important;
+  border: 1px solid rgba(171, 209, 198, 0.3) !important;
+  border-radius: 9999px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition-property: border-color, background-color, transform, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.btn-outline-pill svg {
+  color: #abd1c6 !important;
+  transition: color 0.2s ease;
+}
+
+.btn-outline-pill:hover {
+  border-color: #8b5cf6 !important;
+  background-color: rgba(139, 92, 246, 0.12) !important;
+  color: #fffffe !important;
+  transform: scale(1.02);
+}
+
+.btn-outline-pill:hover svg {
+  color: #c084fc !important;
+}
+
+.btn-outline-pill:active {
+  transform: scale(0.98);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #004643;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #001e1d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Shimmer Loading Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.8s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,147 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        surface: {
+          canvas: "var(--color-canvas, #004643)",
+          base: "var(--color-surface-base, #001e1d)",
+          elevated: "var(--color-surface-elevated, #052e2c)",
+          overlay: "var(--color-surface-overlay, #083c39)",
+          secondary: "#abd1c6",
+          pill: "var(--color-surface-pill, rgba(255, 255, 254, 0.08))",
+        },
+        secondary: {
+          DEFAULT: "#abd1c6",
+          surface: "var(--color-surface-elevated, #052e2c)",
+          border: "var(--color-border, rgba(171, 209, 198, 0.25))",
+          glow: "rgba(168, 85, 247, 0.25)",
+        },
+        tertiary: {
+          DEFAULT: "#e16162",
+          light: "#ea7f80",
+          dark: "#b84546",
+          glow: "rgba(225, 97, 98, 0.35)",
+        },
+        velvet: {
+          50: "#faf5ff",
+          100: "#f3e8ff",
+          200: "#e9d5ff",
+          300: "#d8b4fe",
+          400: "#a855f7", // Violet Highlight
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#004643",
+          950: "#001e1d",
+          glow: "rgba(168, 85, 247, 0.35)",
+        },
+        accent: {
+          300: "#d8b4fe",
+          400: "#a855f7",
+          500: "#8b5cf6",
+          600: "#7c3aed",
+          700: "#6d28d9",
+          800: "#5b21b6",
+          900: "#004643",
+          glow: "rgba(168, 85, 247, 0.35)",
+        },
+        purple: {
+          50: "#faf5ff",
+          100: "#f3e8ff",
+          200: "#e9d5ff",
+          300: "#d8b4fe",
+          400: "#c084fc",
+          500: "#a855f7",
+          600: "#9333ea",
+          700: "#7e22ce",
+          800: "#6b21a8",
+          900: "#581c87",
+          950: "#3b0764",
+        },
+        pine: {
+          50: "#e6f0ee",
+          100: "#c0dad6",
+          200: "#abd1c6", // Seafoam Paragraph Text (#abd1c6)
+          500: "#004643", // Deep Pine Background (#004643)
+          900: "#001e1d", // Stroke / Deep Base (#001e1d)
+        },
+        headline: "#fffffe",
+        paragraph: "#abd1c6",
+        stroke: "#001e1d",
+        bone: "#e8e4e6",
+        border: {
+          subtle: "var(--border-subtle, rgba(171, 209, 198, 0.2))",
+          hover: "var(--border-hover, #a855f7)",
+        },
+      },
+      boxShadow: {
+        "velvet-sm": "0 0 10px rgba(168, 85, 247, 0.35)",
+        "velvet": "0 2px 15px rgba(0, 30, 29, 0.3)",
+        "velvet-md": "0 4px 20px rgba(0, 30, 29, 0.4)",
+        "velvet-soft": "0 4px 20px rgba(168, 85, 247, 0.2)",
+        "velvet-card": "0 4px 30px rgba(0, 30, 29, 0.35)",
+        "velvet-hover": "0 8px 35px rgba(168, 85, 247, 0.35)",
+        "velvet-lg": "0 8px 40px rgba(0, 30, 29, 0.45)",
+        "velvet-50": "0 8px 50px rgba(168, 85, 247, 0.3)",
+        "velvet-xl": "0 12px 60px rgba(0, 30, 29, 0.55)",
+        "velvet-xl-soft": "0 12px 60px rgba(168, 85, 247, 0.2)",
+        "velvet-xl-subtle": "0 6px 40px rgba(0, 30, 29, 0.3)",
+        "velvet-xl-dim": "0 8px 50px rgba(0, 30, 29, 0.4)",
+        "rose-glow": "0 0 50px rgba(168, 85, 247, 0.25)",
+        "white-pill": "0 2px 15px rgba(0, 30, 29, 0.3)",
+        "white-hover": "0 4px 25px rgba(0, 30, 29, 0.4)",
+        "overlay-heavy": "0 10px 40px rgba(0, 30, 29, 0.5)",
+      },
+      dropShadow: {
+        "velvet-mark": "0 0 12px rgba(168, 85, 247, 0.45)",
+        "velvet-mark-sm": "0 0 10px rgba(168, 85, 247, 0.35)",
+        "velvet-ribbon": "0 0 40px rgba(168, 85, 247, 0.35)",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "velvet-radial-tr": "radial-gradient(circle at top right, rgba(168, 85, 247, 0.2) 0%, rgba(0, 70, 67, 0.6) 60%, transparent 80%)",
+        "velvet-radial-tr-strong": "radial-gradient(circle at top right, rgba(168, 85, 247, 0.28) 0%, transparent 70%)",
+        "velvet-radial-tr-soft": "radial-gradient(circle at top right, rgba(168, 85, 247, 0.15) 0%, transparent 70%)",
+        "velvet-radial-tr-subtle": "radial-gradient(circle at top right, rgba(168, 85, 247, 0.18) 0%, transparent 70%)",
+        "velvet-radial-center": "radial-gradient(circle at center, rgba(168, 85, 247, 0.2) 0%, transparent 80%)",
+        "velvet-radial-top": "radial-gradient(circle at top, rgba(168, 85, 247, 0.25) 0%, transparent 75%)",
+        "velvet-radial-muted": "radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%)",
+        "velvet-gradient": "linear-gradient(135deg, #FFFFFF 30%, #C084FC 80%, #8B5CF6 100%)",
+        "card-glow": "radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(168, 85, 247, 0.15), transparent 40%)",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "monospace"],
+      },
+      animation: {
+        "pulse-subtle": "pulseSubtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "glow": "glow 4s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        pulseSubtle: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.6" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        glow: {
+          "0%": { filter: "drop-shadow(0 0 15px rgba(249, 188, 96, 0.35))" },
+          "100%": { filter: "drop-shadow(0 0 35px rgba(249, 188, 96, 0.7))" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};

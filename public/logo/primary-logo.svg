@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80" role="img" aria-label="Velvet Logo">
+  <title>Velvet</title>
+  <defs>
+    <!-- Left wing gradient: muted forest sage to deep pine -->
+    <linearGradient id="primaryLeftWing" x1="0%" y1="30%" x2="100%" y2="80%">
+      <stop offset="0%"   stop-color="#2d3e30"/>
+      <stop offset="50%"  stop-color="#5f7e5c"/>
+      <stop offset="100%" stop-color="#789575"/>
+    </linearGradient>
+
+    <!-- Right wing gradient: forest sage highlight to deep pine -->
+    <linearGradient id="primaryRightWing" x1="0%" y1="30%" x2="100%" y2="80%">
+      <stop offset="0%"   stop-color="#a8c2a5"/>
+      <stop offset="50%"  stop-color="#789575"/>
+      <stop offset="100%" stop-color="#2d3e30"/>
+    </linearGradient>
+
+    <!-- Wordmark text gradient matching theme -->
+    <linearGradient id="velvetWordmarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#141f17"/>
+      <stop offset="70%"  stop-color="#2d3e30"/>
+      <stop offset="100%" stop-color="#5f7e5c"/>
+    </linearGradient>
+
+    <!-- Soft glow at top-centre where the two wings meet -->
+    <radialGradient id="primaryGlowCentre" cx="50%" cy="38%" r="30%">
+      <stop offset="0%"  stop-color="#e5e8ce" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#e5e8ce" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle ambient glow behind the ribbon mark -->
+    <radialGradient id="primaryAmbientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#789575" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e5e8ce" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="primaryGlowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- ================= SUBMARK ICON (Left, scaled & centered in 80x80 box) ================= -->
+  <g transform="translate(4, 0) scale(0.38)">
+    <!-- Ambient purple glow -->
+    <ellipse cx="100" cy="108" rx="64" ry="50" fill="url(#primaryAmbientGlow)"/>
+
+    <!-- Left wing of the V -->
+    <path
+      d="
+        M 40,54
+        C 34,52  26,58  28,66
+        C 30,74  38,78  52,88
+        C 64,96  80,106 100,148
+        C 100,148 100,72 100,72
+        C 82,66  58,56  40,54
+        Z
+      "
+      fill="url(#primaryLeftWing)"
+      filter="url(#primaryGlowFilter)"
+    />
+
+    <!-- Right wing of the V -->
+    <path
+      d="
+        M 160,54
+        C 166,52  174,58  172,66
+        C 170,74  162,78  148,88
+        C 136,96  120,106 100,148
+        C 100,148 100,72 100,72
+        C 118,66  142,56  160,54
+        Z
+      "
+      fill="url(#primaryRightWing)"
+      filter="url(#primaryGlowFilter)"
+    />
+
+    <!-- Centre crease line -->
+    <line
+      x1="100" y1="72"
+      x2="100" y2="148"
+      stroke="#e5e8ce"
+      stroke-width="0.8"
+      stroke-opacity="0.6"
+    />
+
+    <!-- Top-centre highlight spot -->
+    <ellipse
+      cx="100" cy="68"
+      rx="22" ry="8"
+      fill="url(#primaryGlowCentre)"
+    />
+  </g>
+
+  <!-- ================= VELVET WORDMARK (Right) ================= -->
+  <text
+    x="88"
+    y="52"
+    font-family="system-ui, -apple-system, 'Cabinet Grotesk', 'Inter', sans-serif"
+    font-size="44"
+    font-weight="700"
+    letter-spacing="-0.04em"
+    fill="url(#velvetWordmarkGrad)"
+  >Velvet</text>
+
+  <!-- Small signature 4-point sparkle badge next to wordmark -->
+  <path
+    d="M 236,24 Q 236,30 242,30 Q 236,30 236,36 Q 236,30 230,30 Q 236,30 236,24 Z"
+    fill="#789575"
+    opacity="0.85"
+  />
+</svg>
